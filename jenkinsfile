@@ -11,5 +11,10 @@ pipeline{
                 echo "test stage"
             }
         }
+        stage ("scan") {
+            steps {
+                echo "scan stage"
+            }
+        }
     }
 }
