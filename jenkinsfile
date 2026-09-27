@@ -16,7 +16,6 @@ pipeline{
         stage ("scan") {
             steps {
                 echo "scan stage"
-                #new added
             }
         }
     }
