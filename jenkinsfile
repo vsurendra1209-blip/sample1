@@ -3,6 +3,12 @@ pipeline{
         label "java-slave"
     } 
     stages {
+
+        stage ("hostname") {
+            steps {
+                sh 'hostname -i'
+            }
+        }
         stage ("build") {
             steps {
                 echo "build stage"
