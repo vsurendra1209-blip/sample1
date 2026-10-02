@@ -2,18 +2,10 @@ pipeline {
     agent {
         label "java-slave"
     }
-    stages {
-        stage("build") {
-            steps {
-                echo "normal stage"
-            }
-        }
-        stage("groovy") {
+    stages{
+        stage("build"){
             steps{
-                script {
-                    def course = "devops"
-                    println("thanks for enrolling ${course}")
-                }
+                sleep 30
             }
         }
     }
