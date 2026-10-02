@@ -5,7 +5,10 @@ pipeline {
     stages{
         stage("build"){
             steps{
-                sleep 30
+                retry (3) {
+                    echo "retrying the repetations"
+                    error "getting error"
+                }
             }
         }
     }
