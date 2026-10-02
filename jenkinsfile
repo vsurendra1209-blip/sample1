@@ -5,7 +5,7 @@ pipeline {
     stages{
         stage("build"){
             steps{
-                retry (3) {
+                retry (5) {
                     echo "retrying the repetations"
                     error "getting error"
                 }
