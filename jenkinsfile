@@ -11,7 +11,7 @@ pipeline {
         stage("groovy") {
             steps{
                 script {
-                    def course = "k8s"
+                    def course = "devops"
                     println("thanks for enrolling ${course}")
                 }
             }
