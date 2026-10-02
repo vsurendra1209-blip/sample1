@@ -1,15 +1,13 @@
 pipeline {
-    agent {
-        label "java-slave"
-    }
+    agent any 
     stages{
-        stage("build"){
-            steps{
-                retry (2) {
-                    echo "retrying the repetations"
-                    error "getting error"
+        stage("build") {
+            steps {
+                retry(2){
+                    echo "print error"
+                    error "error getting"
                 }
-                echo "new line after the error"
+                echo "after error"
             }
         }
     }
