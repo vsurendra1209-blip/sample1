@@ -1,23 +1,17 @@
 pipeline {
-    agent any
-
-    stages {
+    agent {
+        label "java-slave"
+    }
+    stages{
         stage("build") {
             steps {
-                echo "this is build stage"
-                sh "hostname -i"
+                script {
+                    def browsers = ['chrome', 'firefox']
+                    for (int i = 0; i < browsers.size(); ++i) {
+                        echo "Testing the ${browsers[i]} browser"
+                    }
             }
-        }
-        stage("build2") {
-
-            agent {
-                label 'java-slave'
-            }
-            steps {
-                echo "second build"
-                sh "hostname -i"
-            }
-
         }
     }
+}
 }
