@@ -7,8 +7,9 @@ pipeline {
                     echo "print error"
                     error "error getting"
                 }
-                echo "after error"
+                
             }
+            echo "after error"
         }
     }
 }
