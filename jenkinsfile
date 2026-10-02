@@ -1,26 +1,23 @@
-pipeline{
+pipeline {
     agent any
-    stages {
 
-        stage ("hostname") {
+    stages {
+        stage("build") {
             steps {
-                sh 'hostname -i'
+                echo "this is build stage"
+                sh "hostname -i"
             }
         }
-        stage ("build") {
-            steps {
-                echo "build stage"
+        stage("build2") {
+
+            agent {
+                label 'java-slave'
             }
-        }
-        stage ("test") {
             steps {
-                echo "test stage"
+                echo "second build"
+                sh "hostname -i"
             }
-        }
-        stage ("scan") {
-            steps {
-                echo "scan stage"
-            }
+
         }
     }
 }
