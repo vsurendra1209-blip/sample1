@@ -1,34 +1,11 @@
 pipeline{
-    agent {
-        label "java-slave"
+    agent{
+        label 'java-slave'
     }
-    stages {
-        stage("non-parellel stage"){
+    stages{
+        stage(build){
             steps {
-                echo "non parallel stage"
-            }
-        }
-        stage("parallel"){
-            parallel {
-                stage("stage a") {
-                    agent {
-                        label "java-slave"
-                    }
-                    steps {
-                        echo "stage a in parallel"
-                    }
-                }
-                stage("stage b") {
-                    agent any
-                    steps{
-                        echo "stage b in parallel"
-                    }
-                }
-                stage("stage c"){
-                    steps{
-                        echo "stage c in parallel"
-                    }
-                }
+                echo "stage build"
             }
         }
     }
