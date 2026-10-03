@@ -1,24 +1,15 @@
-pipeline{
+pipeline {
     agent {
         label "java-slave"
     }
-    stages{
-        stage("build") {
-            steps{
-                retry(2) {
-                    echo "printing a new msg"
+    satges{
+        stage("build"){
+            steps {
+                script {
+                    def course = "devops"
+                    println("do enroll for ${course}")
                 }
-                echo "after retying msg"
             }
-            
         }
-        stage("scaning"){
-                steps {
-                    echo "scanning stage"
-                    error "this will give an error"
-
-                }
-            }
-
     }
 }
