@@ -5,7 +5,7 @@ pipeline{
     stages{
         stage("build"){
             steps{
-                echo "new feature-2 branch"
+                echo "new pr branch"
             }
         }
     }
