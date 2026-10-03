@@ -5,7 +5,6 @@ pipeline {
             steps {
                 retry(2){
                     echo "print error"
-                    error "error getting"
                 }
                 
             }
