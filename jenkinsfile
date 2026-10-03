@@ -2,6 +2,9 @@ pipeline{
     agent{
         label 'java-slave'
     }
+    tools {
+        maven "maven-latest"
+    }
     stages{
         stage(build){
             steps {
