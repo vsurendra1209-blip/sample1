@@ -3,7 +3,7 @@ pipeline{
         label 'java-slave'
     }
     tools {
-        JDK "java-17"
+        java "java-17"
     }
     stages{
         stage(build){
