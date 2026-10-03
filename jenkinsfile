@@ -1,16 +1,33 @@
-pipeline {
+pipeline{
     agent {
         label "java-slave"
     }
-    stages{
-        stage("build"){
+    stages {
+        stage("non-parellel stage"){
             steps {
-                script {
-                    def course = "devops"
-                    if course == devops
-                    println("thanks for enroll")
-                    else
-                    println("do enroll for ${course}")
+                echo "non parallel stage"
+            }
+        }
+        stage("parallel"){
+            parallel {
+                stage("stage a") {
+                    agent {
+                        label "java-slave"
+                    }
+                    stpes {
+                        echo "stage a in parallel"
+                    }
+                }
+                stage("stage b") {
+                    agent any
+                    steps{
+                        echo "stage b in parallel"
+                    }
+                }
+                stage("stage c"){
+                    steps{
+                        echo "stage c in parallel"
+                    }
                 }
             }
         }
