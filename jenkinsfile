@@ -1,12 +1,27 @@
 pipeline{
     agent {
-        label 'java-slave'
+        label "java-slave"
     }
     stages{
         stage("build"){
             steps{
-                echo "new feature-2 branch"
+                echo "build stage"
+            }
+        }
+        stage("scan"){
+            steps{
+                echo "scan stage"
+            }
+        }
+        stage("docker-build"){
+            steps{
+                echo "docker build stage"
+            }
+        }
+        stage("deploy to dev"){
+            steps{
+                echo "deploy to dev"
             }
         }
     }
-} 
+}
