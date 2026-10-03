@@ -1,12 +1,11 @@
-pipeline {
-    agent any 
+pipeline{
+    agent {
+        label "java-slave"
+    }
     stages{
         stage("build") {
-            steps {
-                retry(2){
-                    echo "print error"
-                }
-                
+            steps{
+                echo "printing a new msg"
             }
         }
     }
