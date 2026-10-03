@@ -10,7 +10,7 @@ pipeline{
                     error "this will give an error"
 
                 }
-                
+                echo "after retying msg"
             }
         }
     }
