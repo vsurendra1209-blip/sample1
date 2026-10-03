@@ -14,7 +14,7 @@ pipeline{
                     agent {
                         label "java-slave"
                     }
-                    stpes {
+                    steps {
                         echo "stage a in parallel"
                     }
                 }
