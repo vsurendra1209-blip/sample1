@@ -12,11 +12,13 @@ pipeline{
                 }
                 echo "after retying msg"
             }
-            stage("scaning"){
+            
+        }
+        stage("scaning"){
                 steps {
                     echo "scanning stage"
                 }
             }
-        }
+
     }
 }
