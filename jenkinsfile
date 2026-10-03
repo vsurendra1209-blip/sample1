@@ -6,6 +6,7 @@ pipeline{
         stage("build") {
             steps{
                 echo "printing a new msg"
+                error "this will give an error"
             }
         }
     }
