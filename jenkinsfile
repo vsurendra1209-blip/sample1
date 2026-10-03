@@ -2,7 +2,7 @@ pipeline {
     agent {
         label "java-slave"
     }
-    satges{
+    stages{
         stage("build"){
             steps {
                 script {
