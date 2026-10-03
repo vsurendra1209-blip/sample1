@@ -3,12 +3,12 @@ pipeline{
         label 'java-slave'
     }
     tools {
-        jdk "java-17"
+        maven "maven-latest"
     }
     stages{
         stage("build"){
             steps {
-                sh "java --version"
+                sh "mvn --version"
             }
         }
     }
