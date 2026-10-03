@@ -1,15 +1,12 @@
 pipeline{
-    agent{
+    agent {
         label 'java-slave'
-    }
-    tools {
-        maven "maven-latest"
     }
     stages{
         stage("build"){
-            steps {
-                sh "mvn --version"
+            steps{
+                echo "new feature-2 branch"
             }
         }
     }
-}
+} 
