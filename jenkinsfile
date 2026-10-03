@@ -7,8 +7,6 @@ pipeline{
             steps{
                 retry(2) {
                     echo "printing a new msg"
-                    error "this will give an error"
-
                 }
                 echo "after retying msg"
             }
@@ -17,6 +15,8 @@ pipeline{
         stage("scaning"){
                 steps {
                     echo "scanning stage"
+                    error "this will give an error"
+
                 }
             }
 
